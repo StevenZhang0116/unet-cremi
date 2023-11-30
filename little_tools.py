@@ -23,7 +23,7 @@ def check_index(search_lst):
 train_int = check_index(train_fns)
 val_int = check_index(val_fns)
 
-ll = len(val_int)
+ll = len(train_int)
 
 for i in range(ll):
     backbone_raw = "_raw.jpeg"
@@ -36,5 +36,5 @@ for i in range(ll):
     backbonelist = [backbone_raw, backbone_rawindex, backbone_cleft, backbone_cleftindex, backbone_neuron, backbone_neuronindex]
 
     for j in backbonelist:
-        os.rename(f"{val_dir}/{val_int[i]}{j}", f"{val_dir}/{i}{j}")
-        print(f"Rename to: {val_dir}/{i}{j}")
+        os.rename(f"{train_dir}/{train_int[i]}{j}", f"{train_dir}/{i}{j}")
+        print(f"Rename to: {train_dir}/{i}{j}")
